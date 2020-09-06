@@ -1,0 +1,39 @@
+uuid: 41fa4b20-5248-4a4d-895f-857a2f3c287e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.director.body
+    - field.field.node.director.field_photo
+    - node.type.director
+  module:
+    - image
+    - text
+    - user
+id: node.director.default
+targetEntityType: node
+bundle: director
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_photo:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

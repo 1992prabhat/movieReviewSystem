@@ -1,0 +1,32 @@
+uuid: 2e4a146e-afce-47b0-a4b0-f68fd4c89a32
+langcode: en
+status: true
+dependencies: {  }
+id: movie_creator
+label: 'Movie Creator'
+weight: 3
+is_admin: null
+permissions:
+  - 'create cast content'
+  - 'create director content'
+  - 'create moview content'
+  - 'create production content'
+  - 'create terms in genre'
+  - 'delete any cast content'
+  - 'delete any director content'
+  - 'delete any moview content'
+  - 'delete any production content'
+  - 'delete own cast content'
+  - 'delete own director content'
+  - 'delete own moview content'
+  - 'delete own production content'
+  - 'delete terms in genre'
+  - 'edit any cast content'
+  - 'edit any director content'
+  - 'edit any moview content'
+  - 'edit any production content'
+  - 'edit own cast content'
+  - 'edit own director content'
+  - 'edit own moview content'
+  - 'edit own production content'
+  - 'edit terms in genre'

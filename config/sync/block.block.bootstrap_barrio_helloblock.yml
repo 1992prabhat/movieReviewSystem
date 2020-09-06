@@ -1,0 +1,31 @@
+uuid: b65fe0fe-eb59-40de-beda-f070f7b5353c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:94a3dc75-eed2-4e76-bb14-34ae1c465b12'
+  module:
+    - block_content
+    - system
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_helloblock
+theme: bootstrap_barrio
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:94a3dc75-eed2-4e76-bb14-34ae1c465b12'
+settings:
+  id: 'block_content:94a3dc75-eed2-4e76-bb14-34ae1c465b12'
+  label: 'Hello Block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,25 @@
+uuid: fc577c51-1700-42a0-836d-d686d53ca226
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:13e010f4-28c2-4cd9-8bc0-309bae9c99bc'
+  module:
+    - block_content
+  theme:
+    - barrio_custom
+id: socialblock
+theme: barrio_custom
+region: footer_fifth
+weight: 0
+provider: null
+plugin: 'block_content:13e010f4-28c2-4cd9-8bc0-309bae9c99bc'
+settings:
+  id: 'block_content:13e010f4-28c2-4cd9-8bc0-309bae9c99bc'
+  label: 'Social Block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,29 @@
+uuid: 60efae29-8b9b-4c92-b508-44cd3322ae96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_director
+    - node.type.director
+    - node.type.moview
+id: node.moview.field_director
+field_name: field_director
+entity_type: node
+bundle: moview
+label: Director
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      director: director
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

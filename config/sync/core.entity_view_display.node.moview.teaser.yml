@@ -1,0 +1,44 @@
+uuid: 483221fc-04d8-4efe-b8e9-75a3e045c93c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.moview.body
+    - field.field.node.moview.field_cast
+    - field.field.node.moview.field_director
+    - field.field.node.moview.field_genre
+    - field.field.node.moview.field_images
+    - field.field.node.moview.field_production
+    - field.field.node.moview.field_release_date
+    - field.field.node.moview.field_video
+    - node.type.moview
+  module:
+    - text
+    - user
+id: node.moview.teaser
+targetEntityType: node
+bundle: moview
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_cast: true
+  field_director: true
+  field_genre: true
+  field_images: true
+  field_production: true
+  field_release_date: true
+  field_video: true

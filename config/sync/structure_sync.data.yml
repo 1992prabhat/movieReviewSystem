@@ -1,0 +1,71 @@
+taxonomies:
+  genre:
+    -
+      vid: genre
+      tid: '1'
+      langcode: en
+      name: Action
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e3bb7656-428f-46e6-aa2b-3d0221d201d7
+    -
+      vid: genre
+      tid: '2'
+      langcode: en
+      name: Romance
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2d08bbe3-d56b-4e92-8bbf-afdf37f35a8f
+    -
+      vid: genre
+      tid: '3'
+      langcode: en
+      name: Horror
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 303c51ef-79a5-4553-aef7-fc56cee20716
+  tags: {  }
+blocks:
+  -
+    info: 'Social Block'
+    langcode: en
+    uuid: 13e010f4-28c2-4cd9-8bc0-309bae9c99bc
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        value: "<div class=\"text-center center-block\"><a href=\"https://www.facebook.com\">Facebook</a> <a href=\"https://twitter.com\">Twitter</a> <a href=\"https://plus.google.com\">Google Plus</a></div>\r\n"
+        summary: ''
+        format: full_html
+  -
+    info: 'Hello Block'
+    langcode: en
+    uuid: 94a3dc75-eed2-4e76-bb14-34ae1c465b12
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        value: "<p>Hello Prabhat!</p>\r\n\r\n<p>Welcome to Movie review system</p>\r\n"
+        summary: ''
+        format: basic_html
+menus:
+  -
+    menu_name: main
+    title: 'Search Movies'
+    parent: null
+    uri: 'internal:/form/search'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '0'
+    langcode: en
+    uuid: b8e6db07-4dcf-4e16-bf43-215c4e802eba

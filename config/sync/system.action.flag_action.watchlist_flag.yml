@@ -1,0 +1,15 @@
+uuid: d623c4f1-2b2b-469d-bde5-81117b99d392
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.watchlist
+  module:
+    - flag
+id: flag_action.watchlist_flag
+label: 'Add to watchlist'
+type: node
+plugin: 'flag_action:watchlist_flag'
+configuration:
+  flag_id: watchlist
+  flag_action: flag

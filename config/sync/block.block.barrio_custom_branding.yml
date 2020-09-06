@@ -1,0 +1,25 @@
+uuid: 99d5b36b-d3b7-4f24-b0ca-6e8f8312a7f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - barrio_custom
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: barrio_custom_branding
+theme: barrio_custom
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

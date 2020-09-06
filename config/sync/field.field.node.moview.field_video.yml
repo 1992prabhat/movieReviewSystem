@@ -1,0 +1,21 @@
+uuid: 85d85fa9-5e97-4c89-9104-1fdd0286d75b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.moview
+  module:
+    - youtube
+id: node.moview.field_video
+field_name: field_video
+entity_type: node
+bundle: moview
+label: Video
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube

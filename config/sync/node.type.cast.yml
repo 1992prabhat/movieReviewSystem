@@ -1,0 +1,18 @@
+uuid: 322054f3-37e3-433e-a1f3-1d5a8959e45f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Cast
+type: cast
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

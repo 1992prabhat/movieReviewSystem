@@ -1,0 +1,20 @@
+uuid: 229a0bfa-b5f2-4f2e-abd8-1c0e3ca0cfd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - movie_review_custom
+  theme:
+    - barrio_custom
+id: popupblock
+theme: barrio_custom
+region: content
+weight: 0
+provider: null
+plugin: popup_block
+settings:
+  id: popup_block
+  label: PopupBlock
+  provider: movie_review_custom
+  label_display: '0'
+visibility: {  }

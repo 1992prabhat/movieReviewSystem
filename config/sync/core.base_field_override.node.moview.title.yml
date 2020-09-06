@@ -1,0 +1,18 @@
+uuid: c040389f-23ec-4f46-bb7c-e4de78827ece
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.moview
+id: node.moview.title
+field_name: title
+entity_type: node
+bundle: moview
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

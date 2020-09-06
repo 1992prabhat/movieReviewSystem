@@ -1,0 +1,22 @@
+uuid: 5b6495ec-1b9a-4991-b2ab-340f175c71bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.moview
+id: node.moview.promote
+field_name: promote
+entity_type: node
+bundle: moview
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

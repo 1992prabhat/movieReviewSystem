@@ -1,0 +1,104 @@
+uuid: 836a642c-3fa3-4a25-a7b3-57985e73f0bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.moview.body
+    - field.field.node.moview.field_cast
+    - field.field.node.moview.field_director
+    - field.field.node.moview.field_genre
+    - field.field.node.moview.field_images
+    - field.field.node.moview.field_production
+    - field.field.node.moview.field_release_date
+    - field.field.node.moview.field_video
+    - node.type.moview
+  module:
+    - datetime
+    - image
+    - text
+    - user
+    - youtube
+id: node.moview.default
+targetEntityType: node
+bundle: moview
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cast:
+    weight: 103
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_director:
+    weight: 102
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_genre:
+    weight: 105
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_images:
+    weight: 108
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_production:
+    weight: 106
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_release_date:
+    weight: 104
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_video:
+    weight: 107
+    label: hidden
+    settings:
+      youtube_size: 450x315
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_mute: false
+      youtube_loop: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings: {  }
+    type: youtube_video
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

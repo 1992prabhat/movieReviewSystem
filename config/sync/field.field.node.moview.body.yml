@@ -1,0 +1,23 @@
+uuid: 22038d41-9333-42d7-8622-dcd56a588122
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.moview
+  module:
+    - text
+id: node.moview.body
+field_name: body
+entity_type: node
+bundle: moview
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
