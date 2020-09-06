@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - movie_review_custom
+    - system
   theme:
     - barrio_custom
 id: popupblock
@@ -17,4 +18,9 @@ settings:
   label: PopupBlock
   provider: movie_review_custom
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

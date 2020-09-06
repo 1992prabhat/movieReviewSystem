@@ -36,4 +36,5 @@ owl_carousel:
       css/owl.theme.default.min.css: {}
   js:
     js/owl.carousel.min.js: {}
+    js/custom.js: {}
 
