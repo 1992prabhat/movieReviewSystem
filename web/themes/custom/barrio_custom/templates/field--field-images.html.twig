@@ -1,0 +1,6 @@
+{{ attach_library('barrio_custom/owl_carousel') }}
+<div class="owl-carousel owl-theme">
+    {% for item in items %}
+        <div class="item">{{ item.content }}</div>
+    {% endfor %}
+</div>

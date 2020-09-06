@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Contains movie_review_custom.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+use Drupal\Component\Render\FormattableMarkup;
+/**
+ * Implements hook_help().
+ */
+function movie_review_custom_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the movie_review_custom module.
+    case 'help.page.movie_review_custom':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom Module for custom work') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function movie_review_custom_theme() {
+  
+}
+
+
+use Drupal\Core\Url;
+
+/**
+ * @file
+ * Contains dn_students.module.
+ */
+ 
+ function get_movies($opt,$title,$cast) {
+  \Drupal::service('page_cache_kill_switch')->trigger();
+	$res = array();
+
+   $query = \Drupal::entityQuery('node')
+    ->condition('status', 1)
+    ->condition('type', 'moview');
+    if($title != '') {
+      $query->condition('title', $title, '=');
+    }
+    if($cast != '') {
+      $query->condition('field_cast', 1, '=');
+    }
+    
+    $query->sort('created', 'DESC');
+
+    $nids = $query->execute();
+
+    if (!empty($nids)) {
+      
+          $nodes = Node::loadMultiple($nids);
+          foreach($nodes as $key => $value) {
+            $imageUrl = file_create_url($value->get('field_images')->entity->uri->value);
+            $ret[] = [
+              'title' => $value->getTitle(),
+              'release_date' => $value->get('field_release_date')->getValue()[0]['value'],
+              'image' => new FormattableMarkup('<img src="@imageUrl"></img>', ['@imageUrl' => $imageUrl])
+            ];
+          }
+        }
+    return $ret;
+}

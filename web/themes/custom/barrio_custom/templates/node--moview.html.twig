@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="movie-banner">{{content.field_images.0}}</div>
+        </div>
+        <div class="col-md-6">
+            <h3>{{ node.label }}</h3>
+            <div class="d-flex "><p class="mr-4"><strong>Release Date : </strong></p>{{content.field_release_date}}</div>
+            <div class="d-flex"><p class="mr-4"><strong>Genre: </strong></p>{{content.field_genre}}</div>
+            <div class="d-flex"><p class="mr-4"></p>{{ content.flag_watchlist }}</div>
+        </div>
+    </div>
+    {% if content.field_video %}
+    <div class="row">
+        <div class="col-md-12">
+            {{content.field_video}}
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-9">
+            <p>{{content.body}}</p>
+        </div>
+        <div class="col-md-3">
+            {{ drupal_view('production_house') }}
+        </div>
+    </div>
+
+    <div class="row">
+        {{content.field_images}}
+        {# <div class="owl-carousel owl-theme">
+            {# {% for i in 0..content.field_images|length %}
+            {# {% for image in content.field_images %} #}
+                {# <div class="item col-md-2">{{content.field_images[i] }}</div> #}
+            {#{% endfor %} #}
+            {#<div class="item"><h4>1</h4></div>
+            <div class="item"><h4>2</h4></div>
+            <div class="item"><h4>3</h4></div>
+            <div class="item"><h4>4</h4></div>
+            <div class="item"><h4>5</h4></div>
+            <div class="item"><h4>6</h4></div>
+            <div class="item"><h4>7</h4></div>
+            <div class="item"><h4>8</h4></div>
+            <div class="item"><h4>9</h4></div>
+            <div class="item"><h4>10</h4></div>
+            <div class="item"><h4>11</h4></div>
+            <div class="item"><h4>12</h4></div>
+        </div> #}
+    </div>
+    <div class="row">
+        <div class="col-md-12"><h2>Casts</h2></div>
+        
+        <div class="col-md-12">{{drupal_view('casts')}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><h2>Director</h2></div>
+        <div class="col-md-12">{{drupal_view('director')}}</div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+movie_review_custom.pop_up_config_form:
+  path: '/admin/config/movie_review_custom/popupconfig'
+  defaults:
+    _form: '\Drupal\movie_review_custom\Form\PopUpConfigForm'
+    _title: 'PopUpConfigForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+movie_review_custom.search_form:
+  path: '/form/search'
+  defaults:
+    _controller: '\Drupal\movie_review_custom\Controller\SearchController::listMovies'
+    _title: 'SearchController'
+  requirements:
+    _access: 'TRUE'

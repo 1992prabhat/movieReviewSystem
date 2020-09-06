@@ -1,0 +1,5 @@
+name: 'movie_review_custom'
+type: module
+description: 'Custom Module for custom work'
+core: 8.x
+package: 'Custom'
