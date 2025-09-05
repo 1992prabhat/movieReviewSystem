@@ -1,0 +1,64 @@
+name: Deploy Drupal 10 to AWS EC2
+
+on:
+  push:
+    branches:
+      - main   # deploy only from main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Setup PHP & Composer
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, gd, xml, curl, dom, pdo_mysql
+          tools: composer, drush
+
+      # Step 3: Install dependencies
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      # Step 4: Build frontend (if using a theme with npm/yarn)
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Build frontend assets
+        run: |
+          if [ -f package.json ]; then
+            npm install
+            npm run build
+          fi
+
+      # Step 5: Sync files to EC2 using rsync
+      - name: Rsync to EC2
+        uses: burnett01/rsync-deployments@6.0.0
+        with:
+          switches: -avzr --delete --exclude='.git*' --exclude='node_modules'
+          path: ./
+          remote_path: ${{ secrets.DEPLOY_PATH }}
+          remote_host: ${{ secrets.AWS_SSH_HOST }}
+          remote_user: ${{ secrets.AWS_SSH_USER }}
+          remote_key: ${{ secrets.AWS_SSH_KEY }}
+
+      # Step 6: Run Drupal maintenance on EC2
+      - name: Run Drush on EC2
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.AWS_SSH_HOST }}
+          username: ${{ secrets.AWS_SSH_USER }}
+          key: ${{ secrets.AWS_SSH_KEY }}
+          script: |
+            cd ${{ secrets.DEPLOY_PATH }}
+            composer install --no-dev --optimize-autoloader
+            drush updatedb -y
+            drush cache:rebuild
